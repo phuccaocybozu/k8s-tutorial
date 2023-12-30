@@ -1,0 +1,50 @@
+#Example for single pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8s-pod
+spec:
+  containers:
+    - image: kgks/k8s-tutorial:0.0.1
+      name: application
+      ports:
+        - containerPort: 3000
+          protocol: TCP
+---
+#Example for replication controller
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: k8s-rc
+spec:
+  replicas: 3
+  selector:
+    app: k8s-rc
+  template:
+    metadata:
+      labels:
+        app: k8s-rc
+    spec:
+      containers:
+        - image: kgks/k8s-tutorial:0.0.1
+          name: application
+---
+#Example for ReplicaSet
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: k8s-rs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: k8s-rs
+  template:
+    metadata:
+      labels:
+        app: k8s-rs
+    spec:
+      containers:
+        - image: kgks/k8s-tutorial:0.0.1
+          name: application
+
