@@ -1,0 +1,13 @@
+{
+  "name": "k8s-tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "redis": "3.1.2"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
