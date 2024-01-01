@@ -1,7 +1,7 @@
-const express = require("express");
+const redis = require("redis");
 
-const app = express();
+const client = redis.createClient("redis://redis:6379")
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
+client.on("connect", () => {
+  console.log("Connect redis success");
+})
