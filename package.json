@@ -8,6 +8,8 @@
     "redis": "3.1.2"
   },
   "scripts": {
-    "start": "node index.js"
+    "start-1": "node server-1.js",
+    "start-2": "node server-2.js",
+    "start-3": "node server-3.js"
   }
 }
