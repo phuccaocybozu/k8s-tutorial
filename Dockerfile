@@ -1,17 +1,5 @@
-FROM node:alpine
+FROM ubuntu
 
-# Set working directory
+COPY script.sh ./
 
-WORKDIR /app
-
-# Install app dependencies
-
-COPY package.json ./
-
-RUN yarn
-
-# Copy app source code
-
-COPY . .
-
-CMD ["yarn", "start"]
+CMD ["script.sh"]
